@@ -1,0 +1,183 @@
+<html>
+    <head>
+        <script src="javascripts/index.js"></script>
+        <link rel="shortcut icon" href="#">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Main Screen</title>
+        
+        <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        
+        <!-- Optional Bootstrap JS and jQuery -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    </head>
+
+    <style>
+        .form-group {
+            display: flex;
+            justify-content: center; /* Centers the entire form group */
+            align-items: center; /* Aligns items vertically in the center */
+        }
+        
+        .form-group label {
+            margin-right: 10px; /* Optional: adds space between label and input */
+        }
+
+        .button {
+            background-color: #33a0f2; /* Green */
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            border-radius: 8px;
+        }   
+
+        .button:hover {
+            background-color: white; 
+            color: black; 
+            border: 2px solid #1d6fab;
+        }
+
+        body {
+            background-color: #e1f1fd;
+            /* background-image: url('images/Background.png');
+            background-size: 100px 100px;
+            background-repeat: repeat;
+            background-position: center; */
+            /* font-family: Georgia, serif */
+        }
+
+        .nav-pills .nav-link {
+            flex: 1; /* Ensure each tab takes equal space */
+            text-align: center; /* Center text in the tabs */
+        }
+
+
+
+    </style>
+
+    <body>
+        <div>
+            <br>
+            <br>
+            <div style="text-align:center"><h1>Irrigation Schedule Generator</h1></div>
+            <br>
+            <div class="container">
+                <div class="card rounded-lg" style="width: 69rem; margin:auto;">
+                    <div class="card-body p-5">
+                        <h3 class="card-title">Water Rate Value Inputs</h3>
+                        <p style="color: gray;" class="card-description">Input water application rate values in centimeters.</p>
+                        <br>
+                        <form>
+                            <!-- Zone Location Image -->
+                            <div class="card rounded-lg" style="width: 1000px; height: 800px; margin: auto; background-image: url('images/zones.png'); background-size: contain; background-repeat: no-repeat; background-position: center; position: relative;">
+                                <div class="card-body p-5">
+                                    <!-- Top Row: A, B, C, D, E, F-->
+                                    <div id="zoneID_A" class="col-sm-7" style="position: absolute; left: 13%; top: 10%;">
+                                        <input type="number" class="form-control" id="waterRate_A" name="waterRate_A" required style="width: 80px; height: 30px; font-size: 14px;">                                    
+                                    </div>
+                                    <div id="zoneID_B" class="col-sm-7"style="position: absolute; left: 26%; top: 10%;">
+                                        <input type="number" class="form-control" id="waterRate_B" name="waterRate_B" required style="width: 80px; height: 30px; font-size: 14px;">                                    
+                                    </div>
+                                    <div id="zoneID_C" class="col-sm-7"style="position: absolute; left: 36%; top: 10%;">
+                                        <input type="number" class="form-control" id="waterRate_C" name="waterRate_C" required style="width: 80px; height: 30px; font-size: 14px;">                                    
+                                    </div>
+                                    <div id="zoneID_D" class="col-sm-7"style="position: absolute; left: 46%; top: 10%;">
+                                        <input type="number" class="form-control" id="waterRate_D" name="waterRate_D" required style="width: 80px; height: 30px; font-size: 14px;">                                    
+                                    </div>
+                                    <div id="zoneID_E" class="col-sm-7"style="position: absolute; left: 59%; top: 10%;">
+                                        <input type="number" class="form-control" id="waterRate_E" name="waterRate_E" required style="width: 80px; height: 30px; font-size: 14px;">                                    
+                                    </div>
+                                    <div id="zoneID_F" class="col-sm-7"style="position: absolute; left: 70%; top: 10%;">
+                                        <input type="number" class="form-control" id="waterRate_F" name="waterRate_F" required style="width: 80px; height: 30px; font-size: 14px;">                                    
+                                    </div>
+
+                                    <!-- Second Row: G, H, I, J, K, L -->
+                                    <div id="zoneID_G" class="col-sm-7"style="position: absolute; left: 13%; top: 30%;">
+                                        <input type="number" class="form-control" id="waterRate_G" name="waterRate_G" required style="width: 80px; height: 30px; font-size: 14px;">                                    
+                                    </div>
+                                    <div id="zoneID_H" class="col-sm-7"style="position: absolute; left: 26%; top: 30%;">
+                                        <input type="number" class="form-control" id="waterRate_H" name="waterRate_H" required style="width: 80px; height: 30px; font-size: 14px;">                                    
+                                    </div>
+                                    <div id="zoneID_I" class="col-sm-7"style="position: absolute; left: 36%; top: 30%;">
+                                        <input type="number" class="form-control" id="waterRate_I" name="waterRate_I" required style="width: 80px; height: 30px; font-size: 14px;">                                    
+                                    </div>
+                                    <div id="zoneID_J" class="col-sm-7"style="position: absolute; left: 46%; top: 30%;">
+                                        <input type="number" class="form-control" id="waterRate_J" name="waterRate_J" required style="width: 80px; height: 30px; font-size: 14px;">                                    
+                                    </div>
+                                    <div id="zoneID_K" class="col-sm-7"style="position: absolute; left: 59%; top: 30%;">
+                                        <input type="number" class="form-control" id="waterRate_K" name="waterRate_K" required style="width: 80px; height: 30px; font-size: 14px;">                                    
+                                    </div>
+                                    <div id="zoneID_L" class="col-sm-7"style="position: absolute; left: 70%; top: 30%;">
+                                        <input type="number" class="form-control" id="waterRate_L" name="waterRate_L" required style="width: 80px; height: 30px; font-size: 14px;">                                    
+                                    </div>
+
+                                    <!-- Third Row: M, N, O, P, Q -->
+                                    <div id="zoneID_M" class="col-sm-7"style="position: absolute; left: 23%; top: 41%;">
+                                        <input type="number" class="form-control" id="waterRate_M" name="waterRate_M" required style="width: 80px; height: 30px; font-size: 14px;">                                    
+                                    </div>
+                                    <div id="zoneID_N" class="col-sm-7"style="position: absolute; left: 33%; top: 41%;">
+                                        <input type="number" class="form-control" id="waterRate_N" name="waterRate_N" required style="width: 80px; height: 30px; font-size: 14px;">                                    
+                                    </div>
+                                    <div id="zoneID_O" class="col-sm-7"style="position: absolute; left: 47%; top: 41%;">
+                                        <input type="number" class="form-control" id="waterRate_O" name="waterRate_O" required style="width: 80px; height: 30px; font-size: 14px;">                                    
+                                    </div>
+                                    <div id="zoneID_P" class="col-sm-7"style="position: absolute; left: 59%; top: 41%;">
+                                        <input type="number" class="form-control" id="waterRate_P" name="waterRate_P" required style="width: 80px; height: 30px; font-size: 14px;">                                    
+                                    </div>
+                                    <div id="zoneID_Q" class="col-sm-7"style="position: absolute; left: 70%; top: 41%;">
+                                        <input type="number" class="form-control" id="waterRate_Q" name="waterRate_Q" required style="width: 80px; height: 30px; font-size: 14px;">                                    
+                                    </div>
+
+                                    <!-- Last Row: R, S, T, U, V -->
+                                    <div id="zoneID_R" class="col-sm-7"style="position: absolute; left: 23%; top: 59%;">
+                                        <input type="number" class="form-control" id="waterRate_R" name="waterRate_R" required style="width: 80px; height: 30px; font-size: 14px;">                                    
+                                    </div>
+                                    <div id="zoneID_S" class="col-sm-7"style="position: absolute; left: 33%; top: 59%;">
+                                        <input type="number" class="form-control" id="waterRate_S" name="waterRate_S" required style="width: 80px; height: 30px; font-size: 14px;">                                    
+                                    </div>
+                                    <div id="zoneID_T" class="col-sm-7"style="position: absolute; left: 47%; top: 59%;">
+                                        <input type="number" class="form-control" id="waterRate_T" name="waterRate_T" required style="width: 80px; height: 30px; font-size: 14px;">                                    
+                                    </div>
+                                    <div id="zoneID_U" class="col-sm-7"style="position: absolute; left: 59%; top: 59%;">
+                                        <input type="number" class="form-control" id="waterRate_U" name="waterRate_U" required style="width: 80px; height: 30px; font-size: 14px;">                                    
+                                    </div>
+                                    <div id="zoneID_V" class="col-sm-7"style="position: absolute; left: 70%; top: 59%;">
+                                        <input type="number" class="form-control" id="waterRate_V" name="waterRate_V" required style="width: 80px; height: 30px; font-size: 14px;">                                    
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Date Selection -->
+                            <div class="form-group row mt-2">
+                                <div class="col-sm-12 text-center">
+                                    <label for="select-date">Select Date:</label>
+                                    <input type="date" id="select-date" class="form-control" style="display: inline-block; width: auto;">
+                                </div>
+                            </div>
+
+                            <!-- Submit button -->
+                            <div class="form-group row mt-3">
+                                <div class="col-sm-12 text-center">
+                                    <button style="background-color: #1d6fab; color: white; border-color: #1d6fab; border-radius: 6px;" type="button" class="btn btn-secondary" onclick="generate_report_multi()">Generate Report</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+        </div>
+    </body>
+</html>
+

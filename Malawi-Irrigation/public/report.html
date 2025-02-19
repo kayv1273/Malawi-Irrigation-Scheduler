@@ -1,0 +1,91 @@
+<html>
+  <head>
+    <script src="javascripts/report.js"></script>
+    <link rel="shortcut icon" href="#">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Screen</title>
+    
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <!-- Optional Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  </head>
+
+  <style>
+    .custom-table {
+        background-color: white; /* Set background color to white */
+        padding: 20px; /* Add padding on the sides */
+        /* font-family: Georgia, serif; */
+    }
+
+    .custom-table th,
+    .custom-table td {
+        padding: 20px; /* Increase padding for table cells */
+    }
+
+    .button {
+        background-color: #33a0f2; /* Green */
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        border-radius: 8px;
+    }   
+
+    .button:hover {
+        background-color: white; 
+        color: black; 
+        border: 2px solid #164d75;
+    }
+
+    body {
+      background-color: #e1f1fd;
+        /* background-image: url('images/Background.png');
+        background-size: 100px 100px;
+        background-repeat: repeat;
+        background-position: center; */
+    }
+  </style>
+
+  <body>
+    <br>
+    <br>
+    <div style="text-align:center"><h1>Water Schedule</h1></div>
+    <br>
+    <div class="container">
+      <table class="table table-striped custom-table">
+        <thead>
+          <tr>
+            <th scope="col">Zone ID</th>
+            <th scope="col">Start Time</th>
+            <th scope="col">Stop Time</th>
+          </tr>
+      </thead>
+      <tbody>
+        </tbody>
+      </table>
+    </div>
+    </div>
+    <br>
+    <!-- <div style="text-align:center">
+      <img src="/images/zones.png" alt="My Image" width="800" height="800">
+    </div> -->
+    <br>
+    <div style="text-align:center">
+      <button style="background-color: #1d6fab; color: white; border-color: #1d6fab; border-radius: 6px;box-shadow: none;" class="btn btn-secondary" type="button" onclick="print_button()">Print</button>
+      <button style="background-color: #1d6fab; color: white; border-color: #1d6fab; border-radius: 6px;box-shadow: none;" class="btn btn-secondary" type="button" onclick="back_button()">Back</button>
+    </div>
+    <br>
+  </body>
+</html>
